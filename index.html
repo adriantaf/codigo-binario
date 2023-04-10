@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Conversor codigo binario</title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- Fuentes -->
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="header">
+		<div class="cont-limite">
+			<span class="titulo">Convierte texto en codigo binario y biceversa</span>
+		</div>
+	</header>
+	<main class="main">
+		<div class="cont-limite">
+			<div class="cont-tabs">
+				<button id="btn-tab-texto-binario" class="tab">Texto > Binario</button>
+				<button id="btn-tab-binario-texto" class="tab">Binario > Texto</button>
+			</div>
+			<section class="section-bloques">
+				<article id="bloque-texto-a-binario" class="bloque">
+					<label class="label" for="txt-entrada-texto">Escribe el texto a convertir:</label>
+					<textarea id="txt-entrada-texto" class="textarea texto" placeholder="Escribe aqui..." spellcheck="false"></textarea>
+					<button id="btn-generar-binario" class="button" title="Ctrl + Enter">Generar</button>
+				</article>
+				<article id="bloque-binario-a-texto" class="bloque">
+					<label class="label" for="txt-entrada-binario">Escribe el codigo a convertir:</label>
+					<textarea id="txt-entrada-binario" class="textarea binario" placeholder="Escribe aqui..." inputmode="numeric" spellcheck="false"></textarea>
+					<button id="btn-generar-texto" class="button" title="Ctrl + Enter">Generar</button>
+				</article>
+				<article class="bloque">
+					<label class="label" for="cont-resultado">Salida:</label>
+					<textarea id="txt-salida" class="textarea resultado" readonly="true" placeholder="Salida..."></textarea>
+					<button id="btn-copiar" class="button">Copiar</button>
+				</article>
+			</section>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="cont-limite">
+			<small>Desarrollado por <a href="https://github.com/adriantaf" class="link">Adrian TM</a></small>
+		</div>
+	</footer>
+	<script src="./tabs.js"></script>
+	<script src="./conversor.js"></script>
+	<script src="./copiar_salida.js"></script>
+</body>
+</html>

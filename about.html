@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Script ~ Informacion</title>
+    <meta name="description" content="Convierte facilmente cualquier texto en código binario y viceversa. Ademas, conoce que el código binario, aplicaciones en la vida real y como hacer tu propio código binario">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/normalize.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+    <link rel="stylesheet" href="./src/css/main-responsive.css">
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="hd-header">
+    <span class="hd-logo">Binary Script</span>
+    <nav class="nv-nav">
+        <ul id="menu" class="nv-menu">
+            <li class="nv-menu__item">
+                <a href="./index.html" class="nv-menu__link">Convertidor</a>
+            </li>
+            <li class="nv-menu__item">
+                <a href="./about.html" class="nv-menu__link active">Info</a>
+            </li>
+            <li class="nv-menu__item">
+                <a href="./references.html" class="nv-menu__link">Referencias</a>
+            </li>
+        </ul>
+        <button
+                onclick="MENU.toggleMenu(this)"
+                class="nv-btn-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+            </svg>
+        </button>
+    </nav>
+</header>
+
+<main class="mn-main">
+    <div class="cont-limite mn-cont-limite">
+        <h1 style="font-weight: 400; text-align: center">
+            Proximamente <br> Informacion sobre codigo binario, como hacerlo y asiiii 🗿
+        </h1>
+    </div>
+</main>
+
+<footer class="ft-footer">
+    <div class="cont-limite ft-cont-limite">
+        <article class="ft-secciones">
+            <h3>Contenidos</h3>
+            <dl>
+                <dt><a href="./index.html" class="link">Convertidor</a></dt>
+                <dd>Convierte texto a código binario y viceversa.</dd>
+                <dt><a href="./about.html" class="link">Info</a></dt>
+                <dd>Le damos la respuesta a preguntas como ¿qué es el código binario? ¿cómo puedo convertir código binario en texto?, y mas datos relevantes sobre el código binario.</dd>
+                <dt><a href="./references.html" class="link">Referencias</a></dt>
+                <dd>Son referencias a recursos externos, como por ejemplo la fuente de texto utilizada, imagenes, fuentes de informacón consultadas, etc.</dd>
+            </dl>
+        </article>
+        <article class="ft-secciones">
+            <p class="ft-txt-autor">Desarrollado por <a href="https://github.com/adriantaf" class="link">Adrian TM</a></p>
+        </article>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="js/MenuResponsive.js"></script>
+</body>
+</html>

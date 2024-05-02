@@ -1,0 +1,121 @@
+.mn-cont-limite {
+    width: 800px;
+}
+.sl-selector {
+    height: 44px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.sl-label-indicador-codificacion {
+    height: inherit;
+    display: flex;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    align-items: center;
+    font-size: 17px;
+    padding: 0 15px;
+    border: 1px solid rgba(255,255,255,0.01);
+    text-transform: full-size-kana;
+}
+.sl-btn-cambiar-codificacion {
+    height: inherit;
+    width: auto;
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.01);
+    background-color: rgba(255, 126, 126, 0.48);
+    cursor: pointer;
+    transition: .12s;
+}
+.sl-btn-cambiar-codificacion:active {
+    background-color: rgba(255, 126, 126, 0.63)
+}
+
+.cv-conversor {
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+}
+.cv-cont {
+    width: 50%;
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.01);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.cv-cont--output {
+    background-color: rgba(154, 154, 154, 0.29);
+}
+.cv-textarea {
+    height: auto;
+    min-height: 200px;
+    width: 100%;
+    background-color: transparent;
+    resize: none;
+    border-radius: 5px;
+    font-size: 25px;
+    line-height: 1.5;
+    color: #fff;
+    border: none;
+}
+.cv-textarea::-webkit-scrollbar{
+    width: 8px;
+    background-color: #0c1b4d;
+    border-radius: 20px;
+}
+
+.cv-textarea::-webkit-scrollbar-thumb  {
+    background-color: #09C;
+    border-radius: 6px;
+
+}
+.cv-textarea::placeholder {
+    color: #ddd;
+}
+.cv-textarea:focus {
+    outline: none;
+}
+.cv-textarea--output {
+    margin-bottom: 10px;
+}
+.cv-output__cont-btn {
+    position: relative;
+}
+.cv-output__cont-btn__btn-copy {
+    height: 34px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgba(255,255,255,0.01);
+    background-color: transparent;
+    cursor: pointer;
+    transition: .12s;
+}
+.cv-output__cont-btn__btn-copy:active {
+    background-color: rgba(255, 255, 255, 0.29)
+}
+.cv-output__span-copiado {
+    display: none;
+    position: absolute;
+    top: 34px;
+    left: 0;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(99, 98, 150, 0.3);
+    backdrop-filter: blur(3px);
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.36);
+}
+.cv-output__span-copiado.activar {
+    display: block;
+}

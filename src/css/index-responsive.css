@@ -1,0 +1,16 @@
+@media screen and (max-width: 600px) {
+    .sl-btn-cambiar-codificacion ,
+    .cv-output__cont-btn__btn-copy {
+        cursor: default;
+    }
+
+    .cv-conversor {
+        flex-wrap: wrap;
+    }
+    .cv-cont {
+        width: 100%;
+    }
+    .cv-textarea {
+        font-size: 18px;
+    }
+}

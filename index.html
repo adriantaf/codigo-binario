@@ -1,53 +1,120 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Conversor codigo binario</title>
+	<title>Binary Script ~ Convierte texto en código binario y viceversa</title>
+	<meta name="description" content="Convierte facilmente cualquier texto en código binario y viceversa. Ademas, conoce que el código binario, aplicaciones en la vida real y como hacer tu propio código binario">
 	<!-- CSS -->
-	<link rel="stylesheet" href="normalize.css">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./src/css/normalize.css">
+	<link rel="stylesheet" href="./src/css/main.css">
+	<link rel="stylesheet" href="./src/css/index.css">
+	<link rel="stylesheet" href="./src/css/main-responsive.css">
+	<link rel="stylesheet" href="./src/css/index-responsive.css">
 	<!-- Fuentes -->
-	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Poppins&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<header class="header">
-		<div class="cont-limite">
-			<span class="titulo">Convierte texto en codigo binario y biceversa</span>
-		</div>
+	<!-- 
+		<a href="https://www.flaticon.es/iconos-gratis/codigo" title="código iconos">Código iconos creados por Freepik - Flaticon</a>
+	 -->
+	<header class="hd-header">
+		<span class="hd-logo">Binary Script</span>
+		<nav class="nv-nav">
+			<ul id="menu" class="nv-menu">
+				<li class="nv-menu__item">
+					<a href="./index.html" class="nv-menu__link active">Convertidor</a>
+				</li>
+				<li class="nv-menu__item">
+					<a href="./about.html" class="nv-menu__link">Info</a>
+				</li>
+				<li class="nv-menu__item">
+					<a href="./references.html" class="nv-menu__link">Referencias</a>
+				</li>
+			</ul>
+			<button
+					onclick="MENU.toggleMenu(this)"
+					class="nv-btn-menu">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+				</svg>
+			</button>
+		</nav>
 	</header>
-	<main class="main">
-		<div class="cont-limite">
-			<div class="cont-tabs">
-				<button id="btn-tab-texto-binario" class="tab">Texto > Binario</button>
-				<button id="btn-tab-binario-texto" class="tab">Binario > Texto</button>
-			</div>
-			<section class="section-bloques">
-				<article id="bloque-texto-a-binario" class="bloque">
-					<label class="label" for="txt-entrada-texto">Escribe el texto a convertir:</label>
-					<textarea id="txt-entrada-texto" class="textarea texto" placeholder="Escribe aqui..." spellcheck="false"></textarea>
-					<button id="btn-generar-binario" class="button" title="Ctrl + Enter">Generar</button>
+
+	<main class="mn-main">
+		<div class="cont-limite mn-cont-limite">
+			<section class="sl-selector">
+				<label for="cv-input" class="sl-label-indicador-codificacion"></label>
+				<button
+					class="sl-btn-cambiar-codificacion"
+					onclick="BS.cambiarEstado(BS.estadoInput)"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+						<path fill-rule="evenodd" d="M15.97 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H7.5a.75.75 0 0 1 0-1.5h11.69l-3.22-3.22a.75.75 0 0 1 0-1.06Zm-7.94 9a.75.75 0 0 1 0 1.06l-3.22 3.22H16.5a.75.75 0 0 1 0 1.5H4.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+					</svg>					 
+				</button>
+				<label for="cv-output" class="sl-label-indicador-codificacion"></label>
+			</section>
+
+			<section class="cv-conversor">
+				<article class="cv-cont">
+					<textarea
+						id="cv-input"
+						class="cv-textarea"
+						spellcheck="false"></textarea>
 				</article>
-				<article id="bloque-binario-a-texto" class="bloque">
-					<label class="label" for="txt-entrada-binario">Escribe el codigo a convertir:</label>
-					<textarea id="txt-entrada-binario" class="textarea binario" placeholder="Escribe aqui..." inputmode="numeric" spellcheck="false"></textarea>
-					<button id="btn-generar-texto" class="button" title="Ctrl + Enter">Generar</button>
-				</article>
-				<article class="bloque">
-					<label class="label" for="cont-resultado">Salida:</label>
-					<textarea id="txt-salida" class="textarea resultado" readonly="true" placeholder="Salida..."></textarea>
-					<button id="btn-copiar" class="button">Copiar</button>
+
+				<article class="cv-cont cv-cont--output">
+					<textarea
+						id="cv-output"
+						class="cv-textarea cv-textarea--output"
+						readonly
+						placeholder="Traducción"
+						spellcheck="false"></textarea>
+
+					<div class="cv-output__cont-btn">
+						<button
+								onload="PAPELERA.comprobarCompatibilidad()"
+								onclick="PAPELERA.copiar(this)"
+								class="cv-output__cont-btn__btn-copy">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+							</svg>
+						</button>
+						<span class="cv-output__span-copiado">
+							Texto copiado
+						</span>
+					</div>
 				</article>
 			</section>
 		</div>
 	</main>
-	<footer class="footer">
-		<div class="cont-limite">
-			<small>Desarrollado por <a href="https://github.com/adriantaf" class="link">Adrian TM</a></small>
+
+	<footer class="ft-footer">
+		<div class="cont-limite ft-cont-limite">
+			<article class="ft-secciones">
+				<h3>Contenidos</h3>
+				<dl>
+					<dt><a href="./index.html" class="link">Convertidor</a></dt>
+					<dd>Convierte texto a código binario y viceversa.</dd>
+					<dt><a href="./about.html" class="link">Info</a></dt>
+					<dd>Le damos la respuesta a preguntas como ¿qué es el código binario? ¿cómo puedo convertir código binario en texto?, y mas datos relevantes sobre el código binario.</dd>
+					<dt><a href="./references.html" class="link">Referencias</a></dt>
+					<dd>Son referencias a recursos externos, como por ejemplo la fuente de texto utilizada, imagenes, fuentes de informacón consultadas, etc.</dd>
+				</dl>
+			</article>
+			<article class="ft-secciones">
+				<p class="ft-txt-autor">Desarrollado por <a href="https://github.com/adriantaf" class="link">Adrian TM</a></p>
+			</article>
 		</div>
 	</footer>
-	<script src="./tabs.js"></script>
-	<script src="./conversor.js"></script>
-	<script src="./copiar_salida.js"></script>
+
+	<!-- SCRIPTS -->
+	<script src="js/conversor/Estado.js"></script>
+	<script src="js/conversor/Papelera.js"></script>
+	<script src="js/MenuResponsive.js"></script>
 </body>
 </html>
